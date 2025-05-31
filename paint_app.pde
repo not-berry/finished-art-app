@@ -213,12 +213,21 @@ void draw() {
 
 void mousePressed() {
   //sliders
-  if (mouseX >= 0 && mouseX <= 120 && mouseY > 120 && mouseY < 140) change = true;
+  if (mouseX >= 0 && mouseX <= 120 && mouseY > 120 && mouseY < 140) {
+    change = true;
+    state = "draw";
+    s = 150;
+  }
   if (mouseX >= 0 && mouseX <= 120 && mouseY > 300 && mouseY < 410) changeScale = true;
   
   //eraser toggle
-  if (mouseX >= 15 && mouseX <= 105 && mouseY > 145 && mouseY < 195 && s == 150) s = 0;
-  else if (mouseX >= 15 && mouseX <= 105 && mouseY > 145 && mouseY < 195 && s == 0) s = 150;
+  if (mouseX >= 15 && mouseX <= 105 && mouseY > 145 && mouseY < 195 && s == 150) {
+    s = 0;
+    state = "draw";
+  } else if (mouseX >= 15 && mouseX <= 105 && mouseY > 145 && mouseY < 195 && s == 0) {
+    s = 150;
+    state = "draw";
+  }
   
   //smile toggle
   if (mouseX >= 15 && mouseX <= 55 && mouseY > 205 && mouseY < 245 && !(state == "smile")) state = "smile";
