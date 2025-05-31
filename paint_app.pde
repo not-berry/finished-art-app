@@ -171,7 +171,7 @@ void draw() {
   //stroke weight slider
   if(changeScale) sliderY = mouseY;
   sliderY = constrain(sliderY,310,400);
-  thickness = map(sliderY, 310,400, 15,5);
+  thickness = map(sliderY, 310,400, 50,5);
   strokeWeight(7);
   fill(black);
   stroke(white);
